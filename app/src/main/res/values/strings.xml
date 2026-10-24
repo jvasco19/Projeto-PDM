@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">Gestor de Tarefas</string>
+    <string name="hint_tarefa">Escreve uma tarefa</string>
     <string name="adicionar">Adicionar</string>
     <string name="atualizar">Atualizar</string>
+    <string name="concluir">Concluir</string>
     <string name="eliminar">Eliminar</string>
+    <string name="mostrar_concluidas">Mostrar concluídas</string>
+    <string name="exportar_backup">Exportar backup</string>
 </resources>

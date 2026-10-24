@@ -3,51 +3,105 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     android:orientation="vertical"
-    android:padding="16dp"
     tools:context=".MainActivity">
 
-    <!-- Campo onde se escreve o texto da tarefa -->
-    <EditText
-        android:id="@+id/etTarefa"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Escreve uma tarefa"
-        android:inputType="text" />
-
-    <!-- Botões das operações do CRUD -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
 
-        <Button
-            android:id="@+id/btnAdicionar"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/adicionar" />
+        <TextView
+            android:text="@string/app_name"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
-        <Button
-            android:id="@+id/btnAtualizar"
-            android:layout_width="0dp"
+        <EditText
+            android:id="@+id/etTarefa"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/atualizar" />
+            android:autofillHints=""
+            android:hint="@string/hint_tarefa"
+            android:inputType="textCapSentences"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="10dp"/>
 
-        <Button
-            android:id="@+id/btnEliminar"
-            android:layout_width="0dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnAdicionar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/adicionar"/>
+
+            <Button
+                android:id="@+id/btnAtualizar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/atualizar"
+                android:layout_marginStart="6dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnConcluir"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/concluir" />
+            <Button
+                android:id="@+id/btnEliminar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/eliminar"
+                android:layout_marginStart="6dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switchMostrarConcluidas"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:text="@string/mostrar_concluidas"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="10dp"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/btnExportar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/exportar_backup"
+                android:layout_marginTop="8dp"/>
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/listaTarefas"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
             android:layout_weight="1"
-            android:text="@string/eliminar" />
+            android:layout_marginTop="8dp"/>
     </LinearLayout>
-
-    <!-- Lista onde as tarefas são mostradas -->
-    <ListView
-        android:id="@+id/listaTarefas"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
-
 </LinearLayout>
